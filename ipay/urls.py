@@ -4,7 +4,10 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('ipay_dashboard.views',
+
+    url(r'^$', 'dashboard', name='dashboard'),
+
     # Examples:
     # url(r'^$', 'ipay.views.home', name='home'),
     # url(r'^ipay/', include('ipay.foo.urls')),

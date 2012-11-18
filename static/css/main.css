@@ -1,0 +1,33 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	min-height: 500px;
+	overflow-y: scroll;
+	position: relative;
+}
+
+footer {
+	background: #222;
+	bottom: 0px;
+	border-top: 1px solid #000;
+	color: #666;
+	left: 0px;
+	padding: 17px 0 18px 0;
+	position: absolute;
+	right: 0px;
+}
+
+footer .container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#content {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 67px;
+	top: 62px;
+}
