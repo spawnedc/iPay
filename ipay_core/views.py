@@ -1,6 +1,8 @@
 from django.views.generic.base import View, TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.views.generic.edit import FormView
+
 from ipay.settings import APP_TITLE
 
 class PublicBaseView(View):
@@ -23,5 +25,9 @@ class PublicDetailView(PublicBaseView, DetailView):
     pass
 
 class PublicListView(PublicBaseView, ListView):
+    """ Basic detail page view """
+    pass
+
+class PublicCreateView(PublicBaseView, FormView):
     """ Basic detail page view """
     pass

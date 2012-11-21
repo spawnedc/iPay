@@ -9,4 +9,5 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('ipay_dashboard.views',
     url(r'^$', 'dashboard', name='dashboard'),
+    url(r'^create/$', 'create_payment', name='create_payment'),
 )

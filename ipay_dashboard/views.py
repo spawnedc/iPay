@@ -1,5 +1,6 @@
-from ipay_core.views import PublicBasicPageView
+from ipay_core.views import PublicBasicPageView, PublicCreateView
 from ipay_core.models import Payment
+from ipay_core.forms import PaymentCreateForm
 
 class Dashboard(PublicBasicPageView):
 
@@ -9,8 +10,19 @@ class Dashboard(PublicBasicPageView):
     def get_context_data(self):
         context = super(Dashboard, self).get_context_data()
 
-        context['payments'] = Payment.objects.all().order_by('-date')
+        context['payments'] = Payment.objects.all().order_by('-start_date')
 
         return context
 
 dashboard = Dashboard.as_view()
+
+
+class CreatePayment(PublicCreateView):
+
+    form_class = PaymentCreateForm
+    model = Payment
+
+    template_name = 'create_payment.html'
+    section_name = 'dashboard'
+
+create_payment = CreatePayment.as_view()

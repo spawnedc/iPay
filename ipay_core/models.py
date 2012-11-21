@@ -23,10 +23,16 @@ class Person(models.Model):
 class Payment(models.Model):
 
     title = models.CharField(max_length=200)
-    date = models.DateField()
+    start_date = models.DateField()
     amount = models.DecimalField(max_digits=10, decimal_places=2)
+    is_recurring = models.BooleanField(default=False)
+    repeat_year = models.CharField(max_length=200, default='*')
+    repeat_month = models.CharField(max_length=200, default='*')
+    repeat_week = models.CharField(max_length=200, default='*')
+    repeat_weekday = models.CharField(max_length=200, default='*')
+    repeat_monthday = models.CharField(max_length=200, default='*')
 
     def __unicode__(self):
-        return '%(title)s %(amount).2f, due on %(date)s' % ({'amount': self.amount, 'title': self.title, 'date': self.date})
+        return '%(title)s %(amount).2f, due on %(date)s' % ({'amount': self.amount, 'title': self.title, 'date': self.start_date})
 
 admin.site.register(Payment)
