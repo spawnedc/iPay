@@ -31,3 +31,16 @@ footer .container {
 	bottom: 67px;
 	top: 62px;
 }
+
+input[type="number"],
+input[type="date"] {
+	text-align: right;
+}
+
+.tl { text-align: left }
+.tr { text-align: right }
+.tc { text-align: center }
+
+table th.tl, table td.tl { text-align: left }
+table th.tr, table td.tr { text-align: right }
+table th.tc, table td.tc { text-align: center }

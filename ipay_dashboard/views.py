@@ -1,3 +1,5 @@
+from django.core.urlresolvers import reverse
+
 from ipay_core.views import PublicBasicPageView, PublicCreateView
 from ipay_core.models import Payment
 from ipay_core.forms import PaymentCreateForm
@@ -20,9 +22,10 @@ dashboard = Dashboard.as_view()
 class CreatePayment(PublicCreateView):
 
     form_class = PaymentCreateForm
-    model = Payment
 
     template_name = 'create_payment.html'
-    section_name = 'dashboard'
+    section_name = 'create_payment'
+
+    success_url = '/'
 
 create_payment = CreatePayment.as_view()

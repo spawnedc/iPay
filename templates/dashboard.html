@@ -1,11 +1,32 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block page_title %}Dashboard - {% endblock %}
+{% block page_title %}{% trans 'Dashboard'%} - {% endblock %}
 
 {% block content %}
-	<ul>
-	{% for payment in payments %}
-		<li>{{ payment }}</li>
-	{% endfor %}
-	</ul>
+	<h1>{% trans 'Dashboard' %}</h1>
+	<p class="lead clearfix">
+		{% trans 'Upcoming payments' %}
+		<a class="btn btn-primary pull-right" href="{% url create_payment %}">{% trans 'Create new payment' %}</a>
+	</p>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th class="tr">Amount</th>
+				<th class="tr">Start date</th>
+				<th class="tr">Next payment</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for payment in payments %}
+			<tr>
+				<td>{{ payment.title }}</td>
+				<td class="tr">{{ payment.amount|floatformat:2 }}</td>
+				<td class="tr">{{ payment.start_date|date:"d N Y" }}</td>
+				<td class="tr">{{ payment.get_next_payment|date:"d N Y" }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}
