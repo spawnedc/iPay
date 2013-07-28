@@ -16,6 +16,7 @@
 				<th class="amount tr">Amount</th>
 				<th class="start-date tr">Start date</th>
 				<th class="next-payment tr">Next payment</th>
+				<th class="actions tr">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,6 +26,9 @@
 				<td class="amount tr">{{ payment.amount|floatformat:2 }}</td>
 				<td class="start-date tr">{{ payment.start_date|date:"d N Y" }}</td>
 				<td class="next-payment tr">{{ payment.get_next_payment|date:"d N Y" }}</td>
+				<td class="actions tr">
+					<a class="btn btn-primary" href="{% url 'edit_payment' payment.id %}">Edit</a>
+				</td>
 			</tr>
 			{% endfor %}
 		</tbody>

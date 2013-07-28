@@ -44,7 +44,7 @@ class BaseModelForm(forms.ModelForm):
         super(BaseModelForm, self).__init__(*args, **kwargs)
 
 
-class PaymentCreateForm(BaseModelForm):
+class PaymentForm(BaseModelForm):
     repeat_month = forms.CharField(label=_('Month'), widget=forms.Select(choices=MONTH_CHOICES))
     repeat_weekday = forms.CharField(label=_('Weekday'), widget=forms.Select(choices=DAY_CHOICES))
     repeat_monthday = forms.CharField(label=_('Day'), widget=forms.Select(choices=DAYS))
@@ -54,7 +54,7 @@ class PaymentCreateForm(BaseModelForm):
         fields = ('title', 'amount', 'start_date', 'is_recurring', 'repeat_month', 'repeat_weekday', 'repeat_monthday')
 
     def __init__(self, *args, **kwargs):
-        super(PaymentCreateForm, self).__init__(*args, **kwargs)
+        super(PaymentForm, self).__init__(*args, **kwargs)
         self.fields['title'].widget.attrs['placeholder'] = 'e.g. Rent'
         self.fields['amount'].widget = NumberInput(attrs={'placeholder': 'e.g. 1234.56', 'step': '0.1', 'min': '0.1'})
         self.fields['start_date'].widget = DateInput()
