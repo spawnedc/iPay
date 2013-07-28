@@ -1,16 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
-<form action="" method="post" class="form-horizontal">
-	{% csrf_token %}
-	{{ form.as_bootstrap|safe }}
-	<div class="control-group">
-		<div class="controls">
-			<button class="btn btn-primary" type="submit">{% trans 'Submit' %}</button>
-		</div>
-	</div>
-</form>
+	{% crispy form %}
 
 {% endblock %}
