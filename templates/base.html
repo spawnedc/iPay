@@ -25,10 +25,10 @@
 			<div class="container">
 				<nav class="navbar">
 					<div class="navbar-inner">
-						<a class="brand" href="{% url dashboard %}">{{ APP_TITLE }}</a>
+						<a class="brand" href="{% url 'dashboard' %}">{{ APP_TITLE }}</a>
 						<ul class="nav">
-							<li{% if section == 'dashboard' %} class="active"{% endif %}><a href="{% url dashboard %}">{% trans 'Dashboard' %}</a></li>
-							<li{% if section == 'create_payment' %} class="active"{% endif %}><a href="{% url create_payment %}">{% trans 'Create Payment' %}</a></li>
+							<li{% if section == 'dashboard' %} class="active"{% endif %}><a href="{% url 'dashboard' %}">{% trans 'Dashboard' %}</a></li>
+							<li{% if section == 'create_payment' %} class="active"{% endif %}><a href="{% url 'create_payment' %}">{% trans 'Create Payment' %}</a></li>
 						</ul>
 					</div>
 				</nav>
