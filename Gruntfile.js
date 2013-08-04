@@ -94,8 +94,8 @@ module.exports = function(grunt) {
 		},
 
 		shell: {
-			// Shell command for running App Engine's dev
-			devappserver: {
+			// Shell command for running Django server
+			devserver: {
 				command: 'python manage.py runserver',
 				options: {
 					stdout: true,
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
 
 		concurrent: {
 			serve: {
-				tasks: ['watch', 'shell:devappserver'],
+				tasks: ['watch', 'shell:devserver'],
 				options: {
 					logConcurrentOutput: true
 				}
@@ -116,15 +116,11 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	// grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	// grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-shell');
-	// grunt.loadNpmTasks('grunt-webp');
-	// grunt.loadNpmTasks('grunt-glue');
 
 	// Here's our build process
 	grunt.registerTask('build', [
