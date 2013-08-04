@@ -1,6 +1,7 @@
 # Django settings for ipay project.
+import os
 
-DEBUG = True
+DEBUG = os.environ.get('ON_PROD', True)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
