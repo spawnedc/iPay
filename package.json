@@ -1,0 +1,28 @@
+{
+  "name": "iPay",
+  "version": "0.0.1",
+  "description": "An app that helps you to track your monthly payments.",
+  "private": true,
+  "contributors": [
+    {
+      "name": "Can Yilmaz",
+      "email": "spawnedc@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spawnedc/iPay.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-glue": "~0.1.1",
+    "grunt-shell": "~0.3.0",
+    "grunt-webp": "0.0.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-sass": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-concurrent": "~0.3.0"
+  }
+}

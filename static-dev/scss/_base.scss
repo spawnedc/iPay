@@ -10,13 +10,13 @@ body {
 
 footer {
 	background: #222;
-	bottom: 0px;
+	bottom: 0;
 	border-top: 1px solid #000;
 	color: #666;
-	left: 0px;
+	left: 0;
 	padding: 17px 0 18px 0;
 	position: absolute;
-	right: 0px;
+	right: 0;
 }
 
 footer .container {
@@ -24,10 +24,10 @@ footer .container {
 	padding-right: 20px;
 }
 
-#content {
+.content {
 	position: absolute;
-	left: 0px;
-	right: 0px;
+	left: 0;
+	right: 0;
 	bottom: 67px;
 	top: 62px;
 }
