@@ -114,6 +114,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'crispy_forms',
     'ipay_core',
+    'ipay',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -57,4 +57,4 @@ class PaymentForm(BaseModelForm):
         super(PaymentForm, self).__init__(*args, **kwargs)
         self.fields['title'].widget.attrs['placeholder'] = 'e.g. Rent'
         self.fields['amount'].widget = NumberInput(attrs={'placeholder': 'e.g. 1234.56', 'step': '0.1', 'min': '0.1'})
-        self.fields['start_date'].widget = DateInput()
+        self.fields['start_date'].widget = DateInput(format='%Y-%m-%d', attrs={'placeholder': 'yyy-mm-dd'})
