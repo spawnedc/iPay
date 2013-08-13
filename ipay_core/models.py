@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.db import models
 
 # See http://pypi.python.org/pypi/croniter/
@@ -53,5 +52,3 @@ class Payment(models.Model):
         today = datetime.now()
         croniter_obj = croniter(self.get_cron_string(), today)
         return croniter_obj.get_next(datetime)
-
-admin.site.register(Payment)
