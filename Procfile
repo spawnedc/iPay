@@ -1,1 +1,1 @@
-web: gunicorn ipay/wsgi.py
+web: python manage.py
